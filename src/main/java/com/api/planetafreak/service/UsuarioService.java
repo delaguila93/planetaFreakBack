@@ -19,7 +19,7 @@ import com.api.planetafreak.models.entity.Usuario;
 
 
 
-public class UsuarioService implements UserDetailsService {
+public class UsuarioService implements UserDetailsService,IUsuarioService {
 	private Logger logger = LoggerFactory.getLogger(UsuarioService.class);
 	
 	@Autowired
@@ -28,8 +28,7 @@ public class UsuarioService implements UserDetailsService {
 	@Override
 	@Transactional(readOnly = true)
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-		// TODO Auto-generated method stub
-		
+
 		Usuario usuario = usuarioDao.findByUsername(username);
 		
 		if(usuario == null) {
@@ -45,6 +44,27 @@ public class UsuarioService implements UserDetailsService {
 		
 		
 		return new User(usuario.getUsername(), usuario.getPassword(), true,true, true, true, authorities);
+	}
+
+	@Override
+	public List<Usuario> findAll() {		
+		return (List<Usuario>)usuarioDao.findAll();
+	}
+
+	@Override
+	public Usuario findById(Long id) {		
+		return usuarioDao.findById(id).orElse(null);
+	}
+
+	@Override
+	public Usuario save(Usuario usuario) {
+		return usuarioDao.save(usuario);
+	}
+
+	@Override
+	public void delete(Long id) {
+		usuarioDao.deleteById(id);
+		
 	}
 	
 
