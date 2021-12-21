@@ -1,0 +1,33 @@
+INSERT INTO productos(nombre_producto,descripcion,categoria,cantidad,estado) VALUES ('Final Fantasy VII','Se trata de la séptima entrega de la serie Final Fantasy y la primera de la saga en presentar gráficos tridimensionales, mostrando personajes completamente renderizados sobre escenarios prerrenderizados. ','Videojuegos',26,'Stock');
+INSERT INTO productos(nombre_producto,descripcion,categoria,cantidad,estado) VALUES ('Zelda:Ocarina of Time','Es un videojuego de acción-aventura de 1998 desarrollado por la filial Nintendo EAD y publicado por Nintendo para la consola Nintendo 64','Videojuegos',26,'Stock');
+INSERT INTO productos(nombre_producto,descripcion,categoria,cantidad,estado) VALUES ('Metal Gear','Es un videojuego de infiltración diseñado por Hideo Kojima, desarrollado y publicado por Konami. Fue el título inaugural de la serie Metal Gear. ','Videojuegos',26,'Stock');
+INSERT INTO productos(nombre_producto,descripcion,categoria,cantidad,estado) VALUES ('The Last of Us','Es un videojuego de acción-aventura y horror de supervivencia desarrollado por la compañía estadounidense Naughty Dog y distribuido por Sony Computer Entertainment para la consola PlayStation 3 en 2013.','Videojuegos',26,'Stock');
+INSERT INTO productos(nombre_producto,descripcion,categoria,cantidad,estado) VALUES ('Crash Team Racing','Es un videojuego de carreras y de Karts desarrollado por Naughty Dog, siendo el último videojuego de Crash Bandicoot hecho por esta desarrolladora, y distribuido por únicamente Sony Computer Entertainment ','Videojuegos',26,'Stock');
+
+INSERT INTO productos(nombre_producto,descripcion,categoria,cantidad,estado) VALUES ('Gladiator','Es una película épica del género péplum y acción del año 2000 dirigida por Ridley Scott y protagonizada por Russell Crowe, Joaquin Phoenix y Connie Nielsen.','Peliculas',26,'Stock');
+INSERT INTO productos(nombre_producto,descripcion,categoria,cantidad,estado) VALUES ('Forest Gump','Es una película estadounidense cómica dramática estrenada en 1994. Basada en la novela homónima del escritor Winston Groom, la película fue dirigida por Robert Zemeckis y protagonizada por Tom Hanks, Robin Wright, Gary Sinise y Sally Field. ','Peliculas',26,'Stock');
+INSERT INTO productos(nombre_producto,descripcion,categoria,cantidad,estado) VALUES ('Spiderman - No way Home','Es una película estadounidense de superhéroes basada en el personaje de Marvel Comics, Spider-Man, coproducida por Columbia Pictures y Marvel Studios, y distribuida por Sony Pictures Releasing. ','Peliculas',26,'Stock');
+INSERT INTO productos(nombre_producto,descripcion,categoria,cantidad,estado) VALUES ('Star wars - Una nueva Esperanza ','Es una película estadounidense de 1977 del subgénero de ciencia ficción space opera,Nota 1​2​ escrita y dirigida por George Lucas;3​ renombrada como Star Wars: Episode IV - A New Hope en 1997.','Peliculas',26,'Stock');
+INSERT INTO productos(nombre_producto,descripcion,categoria,cantidad,estado) VALUES ('La lista de Schindler','Es una película estadounidense de 1993 del género de drama histórico basada en la novela El arca de Schindler del escritor australiano Thomas Keneally. ','Peliculas',26,'Stock');
+
+INSERT INTO productos(nombre_producto,descripcion,categoria,cantidad,estado) VALUES ('Funko Pop - Rey','Figura de 9 cm de Rey, la protagonista de la nueva trilogía de La guerra de las galaxias.','Merch',26,'Stock');
+INSERT INTO productos(nombre_producto,descripcion,categoria,cantidad,estado) VALUES ('Lampara Trifuerza','Usa una reliquia dorada sagrada para iluminar tu habitación, sala de juegos o estudio con la luz de la trifuerza dorada The Legend of Zelda.','Merch',26,'Stock');
+INSERT INTO productos(nombre_producto,descripcion,categoria,cantidad,estado) VALUES ('Figura Evangelion','De la mano de Kotobukiya nos llega este impresionante model kit de Evangelion Test Type 01 del anime Neon Genesis Evangelion.','Merch',26,'Stock');
+INSERT INTO productos(nombre_producto,descripcion,categoria,cantidad,estado) VALUES ('Peluche Kirby','Peluche del protagonista de la saga de videojuegos Kirby','Merch',26,'Stock');
+INSERT INTO productos(nombre_producto,descripcion,categoria,cantidad,estado) VALUES ('Llavero capitan America','Llavero de metal con el escudo del capitan America ','Merch',26,'Stock');
+
+
+INSERT INTO roles (nombre) VALUES ("ROLE_USER");
+INSERT INTO roles (nombre) VALUES ("ROLE_ADMIN");
+
+insert into usuario (password, usuario, nombre, apellidos, email,roles_id) values ('$2a$10$z1XutGGFv/Le3/G6Pk.IS.m225r0lcNMz1n6niQmv9zALhQgUU5Um', 'admin', 'Admin ', 'Planeta Freak', 'admin0@planteafreak.com',2);
+insert into usuario (password, usuario, nombre, apellidos, email,roles_id) values ('$2a$10$bzVLyVyfL..QJ/mriQd2oOAMxlIhRf3fSU5cKkziG5xeIPkG/WmJa', 'htyer0', 'Holly', 'Tyer', 'htyer0@sina.com.cn',1);
+insert into usuario (password, usuario, nombre, apellidos, email,roles_id) values ('$2a$10$3G47V25yG0bBPcp.iE.wiOwd3TYqLvfenPOmE3htXPLpkiAh1pcyy', 'hfluger1', 'Harlin', 'Fluger', 'hfluger1@macromedia.com',1);
+insert into usuario (password, usuario, nombre, apellidos, email,roles_id) values ('$2a$10$QyMkzzqhsiZfwLNI.V0yHu/eCZhfXBSdkSTpc3zVcHk0AQUfi9yAW', 'ekeal2', 'Elyse', 'Keal', 'ekeal2@themeforest.net',1);
+insert into usuario (password, usuario, nombre, apellidos, email,roles_id) values ('$2a$10$kpgD7F3eS4wtiHWmxYE5Y.3tFW7i9dnTxnpkrkMKGuNVzDTqBcoja', 'wlacotte3', 'Willdon', 'Lacotte', 'wlacotte3@typepad.com',1);
+insert into usuario (password, usuario, nombre, apellidos, email,roles_id) values ('$2a$10$OQaTcm945ahxgLPxTf9gB.kegbup991wFgkeqKFs0DvQmHINtZMze', 'mlomansey4', 'Marven', 'Lomansey', 'mlomansey4@msu.edu',1);
+insert into usuario (password, usuario, nombre, apellidos, email,roles_id) values ('$2a$10$HqLYp.4KyPflTytjprRrlOdYexmtyLg9P22z5/5kZezQ6DrR5cnZC', 'nquinby5', 'Nixie', 'Quinby', 'nquinby5@fastcompany.com',1);
+insert into usuario (password, usuario, nombre, apellidos, email,roles_id) values ('$2a$10$3yWLeUyx3vo0/YPUwPelEu7tM1K3NrarKwhU9zBYiYYyliAwcFFta', 'tbalasin6', 'Trudie', 'Balasin', 'tbalasin6@delicious.com',1);
+insert into usuario (password, usuario, nombre, apellidos, email,roles_id) values ('$2a$10$a4mNCYDCciHpOwsVCo97GOsrCtQW0BIfKHBMkDruGOb/c7mUjtvRW', 'fglaves7', 'Ferdy', 'Glaves', 'fglaves7@flickr.com',1);
+insert into usuario (password, usuario, nombre, apellidos, email,roles_id) values ('$2a$10$Q5jvXujLYBH6Bupn3VqA9e130eJj7W5o/IdPpuKOD9vVFhv7sIwBe', 'grenshall8', 'Gwenni', 'Renshall', 'grenshall8@wordpress.org',1);
+insert into usuario (password, usuario, nombre, apellidos, email,roles_id) values ('$2a$10$YBUeKRQKkkiW.2X74prm1OjVmV9F402lnkAyzB.DzYMGCiypbxaV.', 'gabramino9', 'Godfrey', 'Abramino', 'gabramino9@weebly.com',1);

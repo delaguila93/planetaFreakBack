@@ -20,14 +20,12 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
 	@Autowired
 	private UserDetailsService usuarioService;
 	
-	@Bean
-	public BCryptPasswordEncoder passwordEncoder() {
-		return new BCryptPasswordEncoder();
-	}
+	@Autowired
+	private BCryptPasswordEncoder passwordEncoder;
 	
 	@Override
 	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-		auth.userDetailsService(this.usuarioService).passwordEncoder(passwordEncoder());
+		auth.userDetailsService(this.usuarioService).passwordEncoder(passwordEncoder);
 	}
 
 	@Bean
@@ -46,6 +44,8 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
 		.disable()
 		.sessionManagement()
 		.sessionCreationPolicy(SessionCreationPolicy.STATELESS);
+		
+		
 	}
 	
 }
