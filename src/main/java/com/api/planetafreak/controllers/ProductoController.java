@@ -6,11 +6,7 @@ import java.net.MalformedURLException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.UUID;
+import java.util.*;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.Resource;
@@ -41,7 +37,9 @@ import io.swagger.annotations.ApiParam;
 @RequestMapping("/api")
 public class ProductoController {
 
-	
+	static final String ETIQUETA_MENSAJE = "mensaje";
+	static final String ETIQUETA_ERROR= "error";
+
 	@Autowired
 	private IProductoService productoService;
 	
@@ -61,8 +59,8 @@ public class ProductoController {
 		try {
 			cliente = productoService.findById(id);
 		} catch (DataAccessException e) {
-			response.put("mensaje", "Error al realizar consulta en base de datos");
-			response.put("error", e.getMessage().concat(": ").concat(e.getMostSpecificCause().getMessage()));
+			response.put(ETIQUETA_MENSAJE, "Error al realizar consulta en base de datos");
+			response.put(ETIQUETA_ERROR, e.getMessage().concat(": ").concat(e.getMostSpecificCause().getMessage()));
 			return new ResponseEntity<Map<String, Object>>(response, HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 
@@ -88,14 +86,14 @@ public class ProductoController {
 
 		try {
 
-			if (producto.getNombre() != "") {
+			if (!Objects.equals(producto.getNombre(), "")) {
 				productoUpdate.setNombre(producto.getNombre());
 			}
 			if (producto.getCantidad() != 0) {
 				productoUpdate.setNombre(producto.getNombre());
 			}
 
-			if (producto.getCategoria() != "") {
+			if (!Objects.equals(producto.getCategoria(), "")) {
 				productoUpdate.setCategoria(producto.getCategoria());
 			}
 			if (producto.getDescripcion() != null) {
@@ -193,7 +191,7 @@ public class ProductoController {
 
 
 
-		return new ResponseEntity<List<Producto> >(productos, HttpStatus.OK);
+		return new ResponseEntity<>(productos, HttpStatus.OK);
 	}
 	
 	@GetMapping("/productos/buscar-categoria/{categoria}")
